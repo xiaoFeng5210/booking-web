@@ -1,10 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 
-export default {
+import postcssPresetEnv from "postcss-preset-env"
+import cssnext from "postcss-cssnext"
+module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
     extend: {},
   },
-  plugins: [require("daisyui")],
+  plugins: {
+    tailwindcss: {},
+    autoprefixer: {},
+  },
 }
-

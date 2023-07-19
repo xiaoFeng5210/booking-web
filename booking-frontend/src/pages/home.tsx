@@ -1,9 +1,9 @@
 import type { FC } from 'react'
-const component: FC = () => {
+const Home: FC = () => {
   return (
-    <div>
+    <div className='w-[100vw] h-[100vh] bg-[red] text-[red]'>
       <h1>hello world</h1>
     </div>
   )
 }
-export default component
+export default Home
