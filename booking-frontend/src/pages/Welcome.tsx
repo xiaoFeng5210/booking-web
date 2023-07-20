@@ -4,8 +4,8 @@ import '~/styles/home.scss'
 const Welcome: FC = () => {
   return (
     <div className='w-[100vw] h-[100vh] home_box text-center inline-flex flex-col items-center'>
-      <header className='w-full h-[26rem] box-border inline-flex justify-center items-center'>
-        <img src="/img/studying.png" className='w-[80%] h-[70%]' alt="" />
+      <header className='w-full h-[50vh] box-border inline-flex justify-center items-center'>
+        <img src="/img/studying.png" className='h-[70%]' alt="" />
       </header>
       <h2 className='text-[black]'>每日提醒
         <br />
