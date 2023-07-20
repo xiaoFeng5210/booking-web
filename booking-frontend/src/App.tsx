@@ -1,10 +1,10 @@
 import { Routes, Route } from 'react-router-dom';
-import Home from '~/pages/home';
+import Welcome from '~/pages/Welcome';
 function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<Home />} /> {/* 👈 Renders at /app/ */}
+      <Route path="/" element={<Welcome />} /> {/* 👈 Renders at /app/ */}
     </Routes>
   )
 }
