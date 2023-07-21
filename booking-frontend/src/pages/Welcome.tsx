@@ -2,6 +2,7 @@ import type { FC } from 'react'
 import { useParams, useNavigate } from 'react-router-dom';
 import WelcomeTemplate from '~/components/ui/WelcomeTemplate'
 import { welcomePages } from '~/constants/data';
+import { Motion, spring } from 'react-motion';
 import '~/styles/home.scss'
 
 const Welcome: FC = () => {
@@ -16,7 +17,7 @@ const Welcome: FC = () => {
       navigate(`/start`)
   }
   return (
-    <WelcomeTemplate  {...current} next={next} />
+      <WelcomeTemplate  {...current} next={next} />
   )
 }
 export default Welcome
