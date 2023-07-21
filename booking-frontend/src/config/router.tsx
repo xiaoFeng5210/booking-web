@@ -9,6 +9,10 @@ const RouterConfig: FC = () => {
       path: "/welcome/:id",
       element: <Welcome />,
     },
+    {
+      path: "/start",
+      element: <div>开始记账</div>,
+    }
   ]);
 };
 

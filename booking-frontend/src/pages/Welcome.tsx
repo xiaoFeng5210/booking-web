@@ -12,6 +12,8 @@ const Welcome: FC = () => {
   function next() {
     if (current!.id < 3)
       navigate(`/welcome/${current!.id + 1}`)
+    else
+      navigate(`/start`)
   }
   return (
     <WelcomeTemplate  {...current} next={next} />
