@@ -10,9 +10,18 @@ interface Props {
   next: () => void
 }
 const WelcomeTemplate: FC<Props> = ({ id, img, tip1, tip2, smalltip, next }) => {
+  useEffect(() => {
+    setTimeout(() => {
+      setStart(true)
+    }, 500)
+    return () => {
+      setStart(false)
+    }
+  }, [id])
+  const [start, setStart] = useState(false)
   const springs = useSpring({
-    from: { opacity: 0, transform: 'translate3d(100%, 0, 0)' },
-    to: { opacity: 1, transform: 'translate3d(0, 0%, 0)' },
+    opacity: start ? 1 : 0,
+    transform: start ? 'translate3d(0, 0%, 0)' : 'translate3d(100%, 0, 0)',
   })
   return (
     <animated.div style={springs} className='w-[100vw] h-[100vh] home_box text-center inline-flex flex-col items-center overflow-hidden'>
