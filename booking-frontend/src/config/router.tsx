@@ -5,7 +5,10 @@ const Welcome = lazy(() => import("~/pages/Welcome"));
 
 const RouterConfig: FC = () => {
   return useRoutes([
-    { path: "/", element: <Welcome />},
+    {
+      path: "/welcome/:id",
+      element: <Welcome />,
+    },
   ]);
 };
 
