@@ -1,11 +1,8 @@
-import { Routes, Route } from 'react-router-dom';
-import Welcome from '~/pages/Welcome';
+import RouterConfig from '~/config/router.tsx';
 function App() {
 
   return (
-    <Routes>
-      <Route path="/" element={<Welcome />} /> {/* 👈 Renders at /app/ */}
-    </Routes>
+    <RouterConfig />
   )
 }
 
