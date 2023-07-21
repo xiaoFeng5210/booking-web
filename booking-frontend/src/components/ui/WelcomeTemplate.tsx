@@ -1,15 +1,21 @@
-import type { FC } from 'react'
+import { useState, type FC, useEffect } from 'react'
+import { useSpring, animated } from '@react-spring/web'
 
 interface Props {
+  id: number
   img: string
   tip1?: string
   tip2?: string
   smalltip?: string
   next: () => void
 }
-const WelcomeTemplate: FC<Props> = ({ img, tip1, tip2, smalltip, next }) => {
+const WelcomeTemplate: FC<Props> = ({ id, img, tip1, tip2, smalltip, next }) => {
+  const springs = useSpring({
+    from: { opacity: 0, transform: 'translate3d(100%, 0, 0)' },
+    to: { opacity: 1, transform: 'translate3d(0, 0%, 0)' },
+  })
   return (
-    <div className='w-[100vw] h-[100vh] home_box text-center inline-flex flex-col items-center'>
+    <animated.div style={springs} className='w-[100vw] h-[100vh] home_box text-center inline-flex flex-col items-center overflow-hidden'>
       <header className='w-full h-[50vh] box-border inline-flex justify-center items-center'>
         <img src={img} className='h-[70%]' alt="" />
       </header>
@@ -22,7 +28,7 @@ const WelcomeTemplate: FC<Props> = ({ img, tip1, tip2, smalltip, next }) => {
         <button className="btn btn-accent text-[white] w-[15.625rem] text-[1.3rem] cursor-pointer" onClick={() => next()}>下 一 步</button>
         <span className='text-[1rem] text-[#808080] cursor-pointer'>跳过</span>
       </footer>
-    </div>
+    </animated.div>
   )
 }
 export default WelcomeTemplate
